@@ -45,23 +45,29 @@
         var height = 1080;
         const svgXml = new XMLSerializer().serializeToString(svgNode);
         const svgBlob = new Blob([svgXml], { type: "image/svg+xml" });
-        var url = URL.createObjectURL(svgBlob);
-        var img = document.createElement("img")
-        img.setAttribute("width",  width)
-        img.setAttribute("height",  height)
+        // var url = URL.createObjectURL(svgBlob);
+        // var img = document.createElement("img")
+        // img.setAttribute("width",  width)
+        // img.setAttribute("height",  height)
 
+        var reader = new FileReader();
 
-        img.onload = function () {
-            var canvas = document.createElement('canvas');
-            canvas.width = width;
-            canvas.height = height;
-            var ctx = canvas.getContext('2d');
-            ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-            canvas.toBlob(function (blob) {
-                saveAs(blob, "test.png");
-            });
-        };
-        img.setAttribute('src', url);
+        reader.onload = function (e) {
+            window.location.href = reader.result;
+        }
+        reader.readAsDataURL(svgBlob);
+
+        // img.onload = function () {
+        //     var canvas = document.createElement('canvas');
+        //     canvas.width = width;
+        //     canvas.height = height;
+        //     var ctx = canvas.getContext('2d');
+        //     ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+        //     canvas.toBlob(function (blob) {
+        //         saveAs(blob, "test.png");
+        //     });
+        // };
+        // img.setAttribute('src', url);
     }
 </script>
 
