@@ -1,12 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    <a download="test.png" target="_blank" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAnUlEQVRoQ+3YQQ6AQAzDwPTn+/PyhRipN3NGAmatHJhkN9fXm+snZPwQYuyJ9Fqm1VslMa2ey7R6K9NCVqaFuFytnsu0eitXC1mZFuJytXou0+qtXC1kZVqIy9XquSYv5z/o9vUv9PdOP4TIeSJAy7QAVkwLaJkWwDItgmVaRMvVAlqmBbBcLYJlWkTL1QJapgWwXC2CZVpEy9UCWh8I1YloPStTxAAAAABJRU5ErkJggg==">Click me to download</a>
+    <a href="#" onclick="downloadFile()">Click me to download</a>
+    <div id="svg_node">
+        <svg xmlns="http://www.w3.org/2000/svg" height="1080" width="1080">
+            <!-- Colour BG -->
+            <rect width="1080" height="1080" style="fill:rgb(238,234,224);" />
+
+            }
+
+            <!-- Logo -->
+
+            <svg width="90" height="22" x="40" y="40" viewBox="0 0 90 22" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M40.9183 21.5404H47.2433L50.9477 0H44.6241L40.9183 21.5404ZM25.5375 6.31285H31.8242C31.8242 6.31285 30.4308 14.1184 30.1299 15.7633C29.8289 17.4087 30.0924 18.4804 31.5981 18.4804C33.1043 18.4804 33.7066 17.5999 33.9696 16.4521C34.2336 15.3043 35.7388 6.27481 35.7388 6.27481H42.2141L39.6539 20.9663H37.8852C37.5129 20.9663 36.8229 21.1048 35.9481 21.2805C34.4332 21.5846 32.3641 22 30.4308 22C22.902 22 23.2788 18.9004 23.5797 16.7194C23.8816 14.5394 25.5375 6.31285 25.5375 6.31285ZM88.4505 7.99936H88.3638V8.56751H87.9501V6.96165L88.0605 6.9618L88.2423 6.96226L88.2429 6.96226L88.3899 6.96266C88.585 6.96316 88.6938 6.96416 88.716 6.96566C88.8411 6.97467 88.945 7.0022 89.0268 7.04825C89.1681 7.12635 89.2376 7.25449 89.2376 7.4312C89.2376 7.56635 89.2006 7.66397 89.1267 7.72404C89.0524 7.78411 88.9613 7.82065 88.8524 7.83216C88.9524 7.85319 89.0268 7.88422 89.0775 7.92477C89.1701 8.00036 89.2169 8.1205 89.2169 8.28368V8.42735C89.2169 8.44337 89.2169 8.45889 89.2189 8.47441C89.2208 8.49042 89.2248 8.50644 89.2297 8.52246L89.244 8.56751H88.8494C88.8362 8.51595 88.8273 8.44237 88.8238 8.34526C88.8199 8.24814 88.812 8.18257 88.7987 8.14903C88.7785 8.09246 88.7401 8.05292 88.683 8.03039C88.6524 8.01788 88.6052 8.00937 88.5416 8.00536L88.4505 7.99936ZM88.5244 7.71002C88.6204 7.71002 88.6968 7.6905 88.7505 7.65145C88.8046 7.61241 88.8312 7.54884 88.8312 7.46073C88.8312 7.37263 88.7889 7.31206 88.7042 7.27802C88.6475 7.2555 88.5677 7.24448 88.4638 7.24448H88.3638V7.71002H88.5244ZM88.5746 6.3129C88.9681 6.3129 89.3036 6.45457 89.5818 6.7374C89.8606 7.02072 90 7.36212 90 7.76158C90 8.17306 89.8577 8.51946 89.572 8.80128C89.2952 9.0736 88.9632 9.20976 88.5746 9.20976C88.1732 9.20976 87.8358 9.0706 87.5615 8.79127C87.2861 8.51195 87.1487 8.16905 87.1487 7.76158C87.1487 7.33859 87.298 6.98668 87.5945 6.70586C87.8723 6.44406 88.1993 6.3129 88.5746 6.3129ZM89.7483 7.76158C89.7483 7.43921 89.6345 7.15938 89.4055 6.92211C89.1755 6.68133 88.8977 6.56069 88.5746 6.56069C88.2476 6.56069 87.9673 6.68133 87.7378 6.92211C87.5108 7.15788 87.397 7.43821 87.397 7.76158C87.397 8.09697 87.5122 8.3818 87.7432 8.61607C87.9723 8.85084 88.2495 8.96848 88.5746 8.96848C88.8977 8.96848 89.1745 8.84984 89.4035 8.61457C89.6336 8.37729 89.7483 8.09297 89.7483 7.76158ZM57.574 6.31285H51.2873C51.2873 6.31285 49.6309 14.5394 49.33 16.7194C49.0276 18.9004 48.6518 22 56.1811 22C58.1144 22 60.1838 21.5845 61.6986 21.2803C62.5731 21.1048 63.2627 20.9663 63.6345 20.9663H65.4032L67.9634 6.27481H61.4891C61.4891 6.27481 59.9839 15.3043 59.7189 16.4521C59.4564 17.5999 58.8536 18.4804 57.3479 18.4804C55.8422 18.4804 55.5787 17.4087 55.8802 15.7633C56.1811 14.1184 57.574 6.31285 57.574 6.31285ZM75.9284 6.31286H68.7764L71.766 13.6974L65.6892 21.6176H71.4272L74.702 17.4087L76.4554 21.6176H83.6464L80.3873 13.6213L85.9425 6.31286H80.4843L77.4503 10.2539L75.9284 6.31286ZM15.5575 0.117086C23.9148 0.117086 24.0778 5.45927 23.8813 7.07814C23.7268 8.34931 23.6982 8.50932 22.9281 12.8078L22.9281 12.808C22.8214 13.4031 22.7006 14.0775 22.5633 14.8451C21.4339 21.1579 12.6255 21.6175 11.4208 21.6175H0L3.87276 0.117086H15.5575ZM10.0235 4.39854L7.93613 17.4311H11.3656C14.1238 17.4311 15.429 15.5374 15.9131 12.8849C15.9854 12.4893 16.0469 12.1544 16.1 11.8658L16.1005 11.8629C16.4025 10.2191 16.4274 10.0835 16.5845 8.83067C16.8081 7.05011 16.6588 4.39854 13.5278 4.39854H10.0235Z"
+                    fill="#041A37" />
+            </svg>
+
+
+            <!-- Text box -->
+            <text style="fill:#041A37;" font-family="Arial, Helvetica, sans-serif">
+                <tspan x="40" y="102" style="font-size: 21px; font-weight: 500;">White Cloak Quarter</tspan>
+                <tspan x="40" y="140" style="font-weight: 400;">14W / SW1B1</tspan>
+            </text>
+        </svg>
+    </div>
 </body>
+<script src="FileSaver.js"></script>
+<script>
+    // var FileSaver = require('file-saver');
+
+    function downloadFile() {
+        const svgNode = document.getElementsByTagName("svg")[0];
+        var width = 1080;
+        var height = 1080;
+        const svgXml = new XMLSerializer().serializeToString(svgNode);
+        const svgBlob = new Blob([svgXml], { type: "image/svg+xml" });
+        var url = URL.createObjectURL(svgBlob);
+        var img = document.createElement("img")
+        img.setAttribute("width",  width)
+        img.setAttribute("height",  height)
+
+
+        img.onload = function () {
+            var canvas = document.createElement('canvas');
+            canvas.width = width;
+            canvas.height = height;
+            var ctx = canvas.getContext('2d');
+            ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+            canvas.toBlob(function (blob) {
+                saveAs(blob, "test.png");
+            });
+        };
+        img.setAttribute('src', url);
+    }
+</script>
+
 </html>
