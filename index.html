@@ -47,8 +47,8 @@
         const svgBlob = new Blob([svgXml], { type: "image/svg+xml" });
         var url = URL.createObjectURL(svgBlob);
         var img = document.createElement("img")
-        img.setAttribute("width", width)
-        img.setAttribute("height", height)
+        img.setAttribute("width",  width)
+        img.setAttribute("height",  height)
 
 
         img.onload = function () {
@@ -57,20 +57,9 @@
             canvas.height = height;
             var ctx = canvas.getContext('2d');
             ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-            if (!navigator.userAgent.match('CriOS')) {
-                canvas.toBlob(function (blob) {
-                    saveAs(blob, "test.png");
-                });
-            } else {
-                //for chrome in apple devices
-                var a = document.createElement('a');
-                a.href = canvas.toDataURL();
-                a.download = 'screen.png';
-                a.target = 'blank';
-                a.click();
-                a.remove();
-            }
-
+            canvas.toBlob(function (blob) {
+                saveAs(blob, "test.png");
+            });
         };
         img.setAttribute('src', url);
     }
